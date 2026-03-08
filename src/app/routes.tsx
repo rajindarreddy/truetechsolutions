@@ -8,18 +8,23 @@ import Blog from "./pages/blog";
 import Careers from "./pages/careers";
 import Contact from "./pages/contact";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: Layout,
-    children: [
-      { index: true, Component: Home },
-      { path: "about", Component: About },
-      { path: "services", Component: Services },
-      { path: "industries", Component: Industries },
-      { path: "blog", Component: Blog },
-      { path: "careers", Component: Careers },
-      { path: "contact", Component: Contact },
-    ],
-  },
-]);
+const basename = import.meta.env.BASE_URL;
+
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: Layout,
+      children: [
+        { index: true, Component: Home },
+        { path: "about", Component: About },
+        { path: "services", Component: Services },
+        { path: "industries", Component: Industries },
+        { path: "blog", Component: Blog },
+        { path: "careers", Component: Careers },
+        { path: "contact", Component: Contact },
+      ],
+    },
+  ],
+  { basename },
+);
