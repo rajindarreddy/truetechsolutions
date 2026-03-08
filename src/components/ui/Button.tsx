@@ -15,18 +15,18 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    "bg-gradient-to-r from-primary-700 to-primary-600 text-white hover:from-primary-800 hover:to-primary-700 shadow-[0_1px_2px_rgba(0,0,0,0.05),0_4px_12px_rgba(37,99,235,0.25)] hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_8px_24px_rgba(37,99,235,0.35)]",
+    "bg-gradient-to-r from-primary-700 to-primary-600 text-white hover:from-primary-800 hover:to-primary-700 active:from-primary-900 active:to-primary-800 shadow-[0_2px_8px_rgba(37,99,235,0.25)] hover:shadow-[0_4px_16px_rgba(37,99,235,0.35)]",
   secondary:
-    "bg-navy-900 text-white hover:bg-navy-800 shadow-[0_1px_2px_rgba(0,0,0,0.05),0_4px_12px_rgba(11,31,58,0.2)] hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_8px_24px_rgba(11,31,58,0.3)]",
+    "bg-navy-900 text-white hover:bg-navy-800 active:bg-navy-950 shadow-[0_2px_8px_rgba(11,31,58,0.2)]",
   outline:
-    "border border-slate-300 text-navy-900 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700",
-  ghost: "text-slate-600 hover:text-primary-700 hover:bg-slate-50",
+    "border border-slate-300 text-navy-900 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700 active:bg-primary-100",
+  ghost: "text-slate-600 hover:text-primary-700 hover:bg-slate-50 active:bg-slate-100",
 };
 
 const sizes = {
-  sm: "px-4 py-2 text-[13px] gap-1.5",
-  md: "px-5 py-2.5 text-sm gap-2",
-  lg: "px-7 py-3.5 text-[15px] gap-2",
+  sm: "px-4 py-2.5 text-sm gap-1.5",
+  md: "px-5 py-3 text-sm gap-2",
+  lg: "px-6 py-3.5 text-base gap-2",
 };
 
 export default function Button({
@@ -39,7 +39,7 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 cursor-pointer tracking-[-0.01em]";
+    "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 cursor-pointer";
   const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {

@@ -4,6 +4,7 @@ import Industries from "@/components/sections/Industries";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Stats from "@/components/sections/Stats";
 import Process from "@/components/sections/Process";
+import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <WhyChooseUs />
       <Stats />
       <Process />
+      <Testimonials />
       <CTA />
     </>
   );

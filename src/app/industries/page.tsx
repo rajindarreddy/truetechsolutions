@@ -15,32 +15,30 @@ export default function IndustriesPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="pt-36 pb-20 lg:pt-48 lg:pb-24 bg-[#fafbfd] relative overflow-hidden">
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="absolute bottom-[-100px] left-[-50px] w-[500px] h-[500px] bg-primary-400/[0.06] rounded-full blur-[100px]" />
+      <section className="pt-24 pb-12 lg:pt-36 lg:pb-16 bg-[#fafbfd] relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-40" />
         <Container className="relative">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-widest uppercase text-primary-600 mb-4">
-              <span className="w-8 h-[2px] rounded-full bg-primary-500" />
+            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-600 mb-3">
+              <span className="w-6 h-0.5 rounded-full bg-primary-500" />
               Industries
-              <span className="w-8 h-[2px] rounded-full bg-primary-500" />
+              <span className="w-6 h-0.5 rounded-full bg-primary-500" />
             </span>
-            <h1 className="text-[40px] md:text-[52px] font-bold text-navy-900 mb-6 leading-[1.1] tracking-[-0.03em]">
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-navy-900 mb-4 lg:mb-6 leading-tight tracking-tight">
               Dominant in Every Sector We Serve
             </h1>
-            <p className="text-[17px] text-slate-500 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base lg:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
               250+ enterprise clients across 8 industries trust us with their
-              most critical hires. Our domain-specialist recruiters understand
-              the compliance, technology, and talent landscapes that define your sector.
+              most critical hires. Our domain-specialist recruiters understand your sector.
             </p>
           </div>
         </Container>
       </section>
 
       {/* Industries Detail */}
-      <section className="py-24 bg-white">
+      <section className="py-14 lg:py-20 bg-white">
         <Container>
-          <div className="space-y-28">
+          <div className="space-y-14 lg:space-y-20">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               const isEven = index % 2 === 0;
@@ -48,47 +46,40 @@ export default function IndustriesPage() {
                 <div
                   key={industry.id}
                   id={industry.id}
-                  className={`flex flex-col lg:flex-row gap-16 items-center ${
+                  className={`flex flex-col lg:flex-row gap-8 lg:gap-14 items-center ${
                     !isEven ? "lg:flex-row-reverse" : ""
                   }`}
                 >
                   <div className="lg:w-1/2">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center mb-6">
-                      <Icon className="w-6 h-6 text-primary-600" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
                     </div>
-                    <h2 className="text-[26px] font-bold text-navy-900 mb-4 tracking-[-0.02em]">
+                    <h2 className="text-xl sm:text-2xl font-bold text-navy-900 mb-3">
                       {industry.title}
                     </h2>
-                    <p className="text-[15px] text-slate-500 leading-relaxed mb-7">
+                    <p className="text-sm sm:text-base text-slate-500 leading-relaxed mb-5">
                       {industry.description}
                     </p>
-                    <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-[0.15em] mb-4">
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
                       Key Focus Areas
                     </p>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2.5">
                       {industry.challenges.map((challenge) => (
-                        <li key={challenge} className="flex items-start gap-3">
-                          <CheckCircle className="w-[18px] h-[18px] text-accent-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-[14px] text-slate-600">
-                            {challenge}
-                          </span>
+                        <li key={challenge} className="flex items-start gap-2.5">
+                          <CheckCircle className="w-4 h-4 text-accent-500 shrink-0 mt-0.5" />
+                          <span className="text-sm text-slate-600">{challenge}</span>
                         </li>
                       ))}
                     </ul>
-                    <Button
-                      href="/contact"
-                      variant="outline"
-                      size="sm"
-                      className="mt-7"
-                    >
+                    <Button href="/contact" variant="outline" size="sm" className="mt-5">
                       Learn More
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Button>
                   </div>
-                  <div className="lg:w-1/2">
-                    <div className="bg-gradient-to-br from-surface to-primary-50 rounded-2xl border border-border h-64 flex items-center justify-center relative overflow-hidden">
+                  <div className="lg:w-1/2 w-full">
+                    <div className="bg-gradient-to-br from-surface to-primary-50 rounded-xl border border-border h-44 sm:h-52 lg:h-60 flex items-center justify-center relative overflow-hidden">
                       <div className="absolute inset-0 dot-pattern" />
-                      <Icon className="w-20 h-20 text-primary-200 relative" />
+                      <Icon className="w-16 h-16 sm:w-20 sm:h-20 text-primary-200 relative" />
                     </div>
                   </div>
                 </div>

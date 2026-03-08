@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -9,13 +9,19 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0B1F3A",
+};
+
 export const metadata: Metadata = {
   title: {
-    default: "True Tech Solutions | Premier IT Staffing & Technology Solutions",
-    template: "%s | True Tech Solutions",
+    default: "TrueTech Solutions | Premier IT Staffing & Technology Services",
+    template: "%s | TrueTech Solutions",
   },
   description:
-    "True Tech Solutions connects top-tier technology professionals with innovative organizations. IT staffing, contract hire, managed teams, and technology services.",
+    "TrueTech Solutions connects top-tier technology professionals with innovative organizations. IT staffing, contract hire, managed teams, and technology services.",
   keywords: [
     "IT staffing",
     "technology staffing",
@@ -27,7 +33,7 @@ export const metadata: Metadata = {
     "technology solutions",
   ],
   openGraph: {
-    title: "True Tech Solutions | Premier IT Staffing & Technology Solutions",
+    title: "TrueTech Solutions | Premier IT Staffing & Technology Services",
     description:
       "Build exceptional technology teams faster. Premier IT staffing and technology solutions partner.",
     type: "website",
@@ -44,7 +50,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className="antialiased text-navy-900 bg-white overflow-x-hidden">
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

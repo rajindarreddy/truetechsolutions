@@ -29,8 +29,8 @@ function AnimatedNumber({ value, suffix }: { value: string; suffix?: string }) {
 
   useEffect(() => {
     if (!visible) return;
-    const duration = 2200;
-    const steps = 70;
+    const duration = 2000;
+    const steps = 60;
     const increment = target / steps;
     let current = 0;
     const timer = setInterval(() => {
@@ -48,7 +48,7 @@ function AnimatedNumber({ value, suffix }: { value: string; suffix?: string }) {
   return (
     <div
       ref={ref}
-      className="text-[48px] md:text-[60px] font-extrabold text-white leading-none tracking-[-0.04em]"
+      className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-none tracking-tight"
     >
       {visible ? display.toLocaleString() : "0"}
       {suffix && <span className="text-primary-400">{suffix}</span>}
@@ -58,34 +58,28 @@ function AnimatedNumber({ value, suffix }: { value: string; suffix?: string }) {
 
 export default function Stats() {
   return (
-    <section className="py-28 bg-navy-900 relative overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-      <div className="absolute top-[-100px] right-[-50px] w-[600px] h-[600px] bg-primary-600/[0.1] rounded-full blur-[140px] animate-pulse-glow" />
-      <div className="absolute bottom-[-100px] left-[-80px] w-[500px] h-[500px] bg-primary-500/[0.07] rounded-full blur-[120px] animate-pulse-glow delay-1000" />
+    <section className="py-16 lg:py-24 bg-navy-900 relative overflow-hidden">
+      <div className="absolute inset-0 grid-pattern opacity-10" />
 
-      {/* Decorative circles */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-white/[0.02] rounded-full" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/[0.03] rounded-full" />
+      {/* Gradient orbs - desktop only */}
+      <div className="hidden md:block absolute top-[-80px] right-[-50px] w-[500px] h-[500px] bg-primary-600/10 rounded-full blur-[120px]" />
+      <div className="hidden md:block absolute bottom-[-80px] left-[-60px] w-[400px] h-[400px] bg-primary-500/[0.06] rounded-full blur-[100px]" />
 
       <Container className="relative">
-        <p className="text-center text-[13px] font-semibold text-primary-400 uppercase tracking-[0.2em] mb-14">
+        <p className="text-center text-xs font-semibold text-primary-400 uppercase tracking-widest mb-10 lg:mb-14">
           Our Track Record Speaks for Itself
         </p>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, i) => {
             const Icon = statIcons[i];
             return (
-              <div key={stat.label} className="text-center group">
-                {/* Icon */}
-                <div className="w-14 h-14 bg-white/[0.06] border border-white/[0.08] rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-white/[0.1] group-hover:border-white/[0.12] transition-all duration-500">
-                  <Icon className="w-6 h-6 text-primary-400" />
+              <div key={stat.label} className="text-center">
+                <div className="w-12 h-12 bg-white/[0.06] border border-white/[0.08] rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Icon className="w-5 h-5 text-primary-400" />
                 </div>
-                {/* Number */}
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-                {/* Label */}
-                <p className="text-slate-400 mt-3 text-[14px] font-medium tracking-wide">
+                <p className="text-slate-400 mt-2 text-sm font-medium">
                   {stat.label}
                 </p>
               </div>

@@ -8,29 +8,29 @@ import { MapPin, Clock, Briefcase, ArrowRight, Users, Sparkles, Heart, TrendingU
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join True Tech Solutions and help build the future of IT staffing. Explore open positions in recruiting, sales, operations, and marketing.",
+    "Join TrueTech Solutions and help build the future of IT staffing. Explore open positions in recruiting, sales, operations, and marketing.",
 };
 
 const perks = [
   {
     icon: TrendingUp,
-    title: "Growth Opportunities",
-    description: "Clear career progression paths with mentorship and leadership development programs.",
+    title: "Growth",
+    description: "Clear career progression with mentorship and leadership development.",
   },
   {
     icon: Heart,
-    title: "Comprehensive Benefits",
-    description: "Competitive compensation, health insurance, 401(k) matching, and generous PTO.",
+    title: "Benefits",
+    description: "Competitive comp, health insurance, 401(k), and generous PTO.",
   },
   {
     icon: Users,
-    title: "Collaborative Culture",
-    description: "A supportive, inclusive team environment where your ideas and contributions matter.",
+    title: "Culture",
+    description: "Supportive, inclusive team where your ideas and contributions matter.",
   },
   {
     icon: Sparkles,
-    title: "Flexible Work",
-    description: "Hybrid and remote options with the tools and support to do your best work from anywhere.",
+    title: "Flexibility",
+    description: "Hybrid and remote options with tools to do your best work anywhere.",
   },
 ];
 
@@ -38,22 +38,20 @@ export default function CareersPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="pt-36 pb-20 lg:pt-48 lg:pb-24 bg-[#fafbfd] relative overflow-hidden">
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="absolute bottom-[-50px] right-[10%] w-[400px] h-[400px] bg-primary-400/[0.06] rounded-full blur-[100px]" />
+      <section className="pt-24 pb-12 lg:pt-36 lg:pb-16 bg-[#fafbfd] relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-40" />
         <Container className="relative">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-widest uppercase text-primary-600 mb-4">
-              <span className="w-8 h-[2px] rounded-full bg-primary-500" />
+            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-600 mb-3">
+              <span className="w-6 h-0.5 rounded-full bg-primary-500" />
               Careers
-              <span className="w-8 h-[2px] rounded-full bg-primary-500" />
+              <span className="w-6 h-0.5 rounded-full bg-primary-500" />
             </span>
-            <h1 className="text-[40px] md:text-[52px] font-bold text-navy-900 mb-6 leading-[1.1] tracking-[-0.03em]">
-              Join the #1 IT Staffing Firm in the Nation
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-navy-900 mb-4 lg:mb-6 leading-tight tracking-tight">
+              Join the #1 IT Staffing Firm
             </h1>
-            <p className="text-[17px] text-slate-500 leading-relaxed max-w-2xl mx-auto">
-              We&apos;re not just another staffing company — we&apos;re the
-              industry leader. Join 120+ specialists who are placing elite talent
+            <p className="text-base lg:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
+              Join 120+ specialists who are placing elite talent
               at the world&apos;s most ambitious companies. Your career starts here.
             </p>
           </div>
@@ -61,26 +59,25 @@ export default function CareersPage() {
       </section>
 
       {/* Why work here */}
-      <section className="py-24 bg-white">
+      <section className="py-14 lg:py-20 bg-white">
         <Container>
           <SectionHeader
-            label="Why True Tech Solutions"
+            label="Why TrueTech"
             title="Why Top Recruiters Choose Us"
-            description="We attract the best in the business because we invest in our people, reward performance, and lead the industry."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {perks.map((perk) => {
               const Icon = perk.icon;
               return (
-                <div key={perk.title} className="text-center group">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500">
-                    <Icon className="w-6 h-6 text-primary-600" />
+                <div key={perk.title} className="text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Icon className="w-5 h-5 text-primary-600" />
                   </div>
-                  <h4 className="text-[16px] font-semibold text-navy-900 mb-2 tracking-[-0.01em]">
+                  <h4 className="text-sm sm:text-base font-semibold text-navy-900 mb-1">
                     {perk.title}
                   </h4>
-                  <p className="text-[14px] text-slate-500 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
                     {perk.description}
                   </p>
                 </div>
@@ -91,8 +88,8 @@ export default function CareersPage() {
       </section>
 
       {/* Open Positions */}
-      <section className="py-24 bg-surface relative overflow-hidden">
-        <div className="absolute inset-0 dot-pattern" />
+      <section className="py-14 lg:py-20 bg-surface relative overflow-hidden">
+        <div className="absolute inset-0 dot-pattern hidden md:block" />
         <Container className="relative">
           <SectionHeader
             label="Open Positions"
@@ -100,41 +97,36 @@ export default function CareersPage() {
             description="Explore current openings and find the right fit for your skills and career goals."
           />
 
-          <div className="space-y-4 max-w-4xl mx-auto">
+          <div className="space-y-3 max-w-4xl mx-auto">
             {jobPostings.map((job) => (
               <div
                 key={job.id}
-                className="group bg-white rounded-2xl border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:border-primary-200"
+                className="bg-white rounded-xl border border-border p-4 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-md"
               >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
-                  <div>
-                    <h3 className="text-[17px] font-semibold text-navy-900 mb-2.5 tracking-[-0.01em]">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="min-w-0">
+                    <h3 className="text-base font-semibold text-navy-900 mb-2">
                       {job.title}
                     </h3>
-                    <div className="flex flex-wrap gap-4 text-[13px] text-slate-400 mb-2">
-                      <span className="flex items-center gap-1.5">
-                        <MapPin className="w-3.5 h-3.5" />
+                    <div className="flex flex-wrap gap-3 text-xs text-slate-400 mb-1.5">
+                      <span className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
                         {job.location}
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5" />
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
                         {job.type}
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <Briefcase className="w-3.5 h-3.5" />
+                      <span className="flex items-center gap-1">
+                        <Briefcase className="w-3 h-3" />
                         {job.department}
                       </span>
                     </div>
-                    <p className="text-[14px] text-slate-500">
+                    <p className="text-sm text-slate-500 line-clamp-2">
                       {job.description}
                     </p>
                   </div>
-                  <Button
-                    href="/contact"
-                    variant="outline"
-                    size="sm"
-                    className="flex-shrink-0"
-                  >
+                  <Button href="/contact" variant="outline" size="sm" className="shrink-0 w-full sm:w-auto">
                     Apply
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Button>
@@ -143,8 +135,8 @@ export default function CareersPage() {
             ))}
           </div>
 
-          <div className="text-center mt-14">
-            <p className="text-[15px] text-slate-500 mb-5">
+          <div className="text-center mt-10">
+            <p className="text-sm text-slate-500 mb-4">
               Don&apos;t see a role that fits? We&apos;re always looking for talented people.
             </p>
             <Button href="/contact" variant="primary">

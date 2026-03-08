@@ -7,7 +7,7 @@ import { companyInfo } from "@/data/company";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 
 const inputClasses =
-  "w-full px-4 py-3 bg-white border border-border rounded-xl text-[14px] text-navy-900 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 transition-all placeholder:text-slate-400";
+  "w-full px-4 py-3 bg-white border border-border rounded-xl text-sm text-navy-900 focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 transition-all placeholder:text-slate-400";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,52 +20,51 @@ export default function ContactPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="pt-36 pb-20 lg:pt-48 lg:pb-24 bg-[#fafbfd] relative overflow-hidden">
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="absolute top-[-100px] right-[20%] w-[500px] h-[500px] bg-primary-400/[0.06] rounded-full blur-[100px]" />
+      <section className="pt-24 pb-12 lg:pt-36 lg:pb-16 bg-[#fafbfd] relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-40" />
         <Container className="relative">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-widest uppercase text-primary-600 mb-4">
-              <span className="w-8 h-[2px] rounded-full bg-primary-500" />
+            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-600 mb-3">
+              <span className="w-6 h-0.5 rounded-full bg-primary-500" />
               Contact Us
-              <span className="w-8 h-[2px] rounded-full bg-primary-500" />
+              <span className="w-6 h-0.5 rounded-full bg-primary-500" />
             </span>
-            <h1 className="text-[40px] md:text-[52px] font-bold text-navy-900 mb-6 leading-[1.1] tracking-[-0.03em]">
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-navy-900 mb-4 lg:mb-6 leading-tight tracking-tight">
               Let&apos;s Build Your Team Together
             </h1>
-            <p className="text-[17px] text-slate-500 leading-relaxed max-w-2xl mx-auto">
-              Whether you&apos;re looking for a single specialist or an entire
-              engineering team, we&apos;re ready to help. Tell us about your needs.
+            <p className="text-base lg:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
+              Whether you need a single specialist or an entire
+              engineering team, we&apos;re ready to help.
             </p>
           </div>
         </Container>
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-white">
+      <section className="py-14 lg:py-20 bg-white">
         <Container>
-          <div className="grid lg:grid-cols-5 gap-16">
+          <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Contact Info */}
             <div className="lg:col-span-2">
-              <h2 className="text-[24px] font-bold text-navy-900 mb-4 tracking-[-0.02em]">
+              <h2 className="text-xl sm:text-2xl font-bold text-navy-900 mb-3">
                 Get in Touch
               </h2>
-              <p className="text-[15px] text-slate-500 leading-relaxed mb-8">
-                Reach out to us directly or fill out the form. Our team
+              <p className="text-sm sm:text-base text-slate-500 leading-relaxed mb-6">
+                Reach out directly or fill out the form. Our team
                 typically responds within one business day.
               </p>
 
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <a
                   href={`mailto:${companyInfo.email}`}
-                  className="flex items-start gap-4 group"
+                  className="flex items-start gap-3 group"
                 >
-                  <div className="w-11 h-11 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-primary-100 group-hover:to-primary-200 transition-colors duration-500">
-                    <Mail className="w-[18px] h-[18px] text-primary-600" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-primary-600" />
                   </div>
                   <div>
-                    <p className="text-[12px] text-slate-400 mb-0.5">Email</p>
-                    <p className="text-[15px] text-navy-900 font-medium group-hover:text-primary-600 transition-colors">
+                    <p className="text-xs text-slate-400">Email</p>
+                    <p className="text-sm font-medium text-navy-900 group-hover:text-primary-600 transition-colors">
                       {companyInfo.email}
                     </p>
                   </div>
@@ -73,26 +72,26 @@ export default function ContactPage() {
 
                 <a
                   href={`tel:${companyInfo.phone}`}
-                  className="flex items-start gap-4 group"
+                  className="flex items-start gap-3 group"
                 >
-                  <div className="w-11 h-11 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-primary-100 group-hover:to-primary-200 transition-colors duration-500">
-                    <Phone className="w-[18px] h-[18px] text-primary-600" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-primary-600" />
                   </div>
                   <div>
-                    <p className="text-[12px] text-slate-400 mb-0.5">Phone</p>
-                    <p className="text-[15px] text-navy-900 font-medium group-hover:text-primary-600 transition-colors">
+                    <p className="text-xs text-slate-400">Phone</p>
+                    <p className="text-sm font-medium text-navy-900 group-hover:text-primary-600 transition-colors">
                       {companyInfo.phone}
                     </p>
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-[18px] h-[18px] text-primary-600" />
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin className="w-4 h-4 text-primary-600" />
                   </div>
                   <div>
-                    <p className="text-[12px] text-slate-400 mb-0.5">Headquarters</p>
-                    <p className="text-[15px] text-navy-900 font-medium">
+                    <p className="text-xs text-slate-400">Headquarters</p>
+                    <p className="text-sm font-medium text-navy-900">
                       {companyInfo.address}
                     </p>
                   </div>
@@ -100,17 +99,17 @@ export default function ContactPage() {
               </div>
 
               {/* Offices */}
-              <div className="mt-10 pt-8 border-t border-border">
-                <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-[0.15em] mb-4">
+              <div className="mt-8 pt-6 border-t border-border">
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
                   Our Offices
                 </p>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   {companyInfo.offices.map((office) => (
                     <div
                       key={office}
-                      className="flex items-center gap-2 text-[13.5px] text-slate-500"
+                      className="flex items-center gap-2 text-sm text-slate-500 py-1"
                     >
-                      <MapPin className="w-3 h-3 text-primary-400" />
+                      <MapPin className="w-3 h-3 text-primary-400 shrink-0" />
                       {office}
                     </div>
                   ))}
@@ -120,66 +119,61 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="bg-surface rounded-2xl border border-border p-8 lg:p-10">
+              <div className="bg-surface rounded-xl border border-border p-5 sm:p-7 lg:p-8">
                 {submitted ? (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                      <CheckCircle className="w-8 h-8 text-accent-600" />
+                  <div className="text-center py-10">
+                    <div className="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-7 h-7 text-accent-600" />
                     </div>
-                    <h3 className="text-[24px] font-bold text-navy-900 mb-3 tracking-[-0.02em]">
+                    <h3 className="text-xl font-bold text-navy-900 mb-2">
                       Thank You!
                     </h3>
-                    <p className="text-[15px] text-slate-500 max-w-md mx-auto leading-relaxed">
+                    <p className="text-sm text-slate-500 max-w-md mx-auto leading-relaxed mb-5">
                       We&apos;ve received your message and will get back to you
-                      within one business day. We&apos;re excited to learn more
-                      about your needs.
+                      within one business day.
                     </p>
-                    <Button
-                      onClick={() => setSubmitted(false)}
-                      variant="outline"
-                      className="mt-6"
-                    >
+                    <Button onClick={() => setSubmitted(false)} variant="outline">
                       Send Another Message
                     </Button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
-                    <h3 className="text-[20px] font-bold text-navy-900 mb-7 tracking-[-0.01em]">
+                    <h3 className="text-lg font-bold text-navy-900 mb-5">
                       Tell Us About Your Needs
                     </h3>
 
-                    <div className="grid sm:grid-cols-2 gap-5 mb-5">
+                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
                       <div>
-                        <label htmlFor="firstName" className="block text-[13px] font-medium text-navy-900 mb-2">
+                        <label htmlFor="firstName" className="block text-xs font-medium text-navy-900 mb-1.5">
                           First Name
                         </label>
                         <input id="firstName" type="text" required className={inputClasses} placeholder="John" />
                       </div>
                       <div>
-                        <label htmlFor="lastName" className="block text-[13px] font-medium text-navy-900 mb-2">
+                        <label htmlFor="lastName" className="block text-xs font-medium text-navy-900 mb-1.5">
                           Last Name
                         </label>
                         <input id="lastName" type="text" required className={inputClasses} placeholder="Doe" />
                       </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-5 mb-5">
+                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
                       <div>
-                        <label htmlFor="email" className="block text-[13px] font-medium text-navy-900 mb-2">
+                        <label htmlFor="email" className="block text-xs font-medium text-navy-900 mb-1.5">
                           Work Email
                         </label>
                         <input id="email" type="email" required className={inputClasses} placeholder="john@company.com" />
                       </div>
                       <div>
-                        <label htmlFor="company" className="block text-[13px] font-medium text-navy-900 mb-2">
+                        <label htmlFor="company" className="block text-xs font-medium text-navy-900 mb-1.5">
                           Company
                         </label>
                         <input id="company" type="text" className={inputClasses} placeholder="Acme Corp" />
                       </div>
                     </div>
 
-                    <div className="mb-5">
-                      <label htmlFor="interest" className="block text-[13px] font-medium text-navy-900 mb-2">
+                    <div className="mb-4">
+                      <label htmlFor="interest" className="block text-xs font-medium text-navy-900 mb-1.5">
                         What are you looking for?
                       </label>
                       <select id="interest" className={inputClasses}>
@@ -194,16 +188,16 @@ export default function ContactPage() {
                       </select>
                     </div>
 
-                    <div className="mb-7">
-                      <label htmlFor="message" className="block text-[13px] font-medium text-navy-900 mb-2">
+                    <div className="mb-5">
+                      <label htmlFor="message" className="block text-xs font-medium text-navy-900 mb-1.5">
                         Message
                       </label>
                       <textarea
                         id="message"
-                        rows={5}
+                        rows={4}
                         required
                         className={`${inputClasses} resize-none`}
-                        placeholder="Tell us about your talent needs, project requirements, or how we can help..."
+                        placeholder="Tell us about your talent needs..."
                       />
                     </div>
 

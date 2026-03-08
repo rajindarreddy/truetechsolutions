@@ -14,98 +14,43 @@ const trustLogos = [
 const metrics = [
   { value: "3,000+", label: "Elite Placements", icon: CheckCircle },
   { value: "98%", label: "Client Retention", icon: Shield },
-  { value: "48hrs", label: "Avg. Delivery Time", icon: Clock },
+  { value: "48hrs", label: "Avg. Delivery", icon: Clock },
   { value: "250+", label: "Enterprise Clients", icon: Zap },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-0 lg:pt-40 overflow-hidden">
-      {/* Rich gradient background */}
+    <section className="relative pt-24 pb-0 lg:pt-36 overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff] via-[#eef2ff] to-[#e8f0fe]" />
+      <div className="absolute inset-0 grid-pattern opacity-40" />
 
-      {/* Animated gradient orbs */}
-      <div className="absolute top-[-120px] right-[10%] w-[600px] h-[600px] bg-primary-400/[0.12] rounded-full blur-[100px] animate-pulse-glow" />
-      <div className="absolute bottom-[10%] left-[-80px] w-[500px] h-[500px] bg-primary-600/[0.08] rounded-full blur-[120px] animate-pulse-glow delay-1000" />
-      <div className="absolute top-[40%] right-[-50px] w-[300px] h-[300px] bg-accent-400/[0.06] rounded-full blur-[80px] animate-float-slow" />
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-60" />
-
-      {/* Tech network illustration - right side */}
-      <div className="absolute right-0 top-[10%] w-[55%] h-[90%] overflow-hidden opacity-[0.06] pointer-events-none hidden lg:block">
-        <svg viewBox="0 0 800 700" fill="none" className="w-full h-full">
-          {/* Concentric circles */}
-          <circle cx="400" cy="350" r="300" stroke="#2563eb" strokeWidth="0.8" strokeDasharray="8 8" />
-          <circle cx="400" cy="350" r="220" stroke="#2563eb" strokeWidth="0.6" strokeDasharray="4 6" />
-          <circle cx="400" cy="350" r="140" stroke="#2563eb" strokeWidth="1" />
-          <circle cx="400" cy="350" r="60" stroke="#2563eb" strokeWidth="1.2" />
-
-          {/* Network nodes and connections */}
-          <line x1="180" y1="120" x2="400" y2="350" stroke="#2563eb" strokeWidth="0.8" />
-          <line x1="620" y1="120" x2="400" y2="350" stroke="#2563eb" strokeWidth="0.8" />
-          <line x1="680" y1="350" x2="400" y2="350" stroke="#2563eb" strokeWidth="0.8" />
-          <line x1="620" y1="580" x2="400" y2="350" stroke="#2563eb" strokeWidth="0.8" />
-          <line x1="180" y1="580" x2="400" y2="350" stroke="#2563eb" strokeWidth="0.8" />
-          <line x1="120" y1="350" x2="400" y2="350" stroke="#2563eb" strokeWidth="0.8" />
-          <line x1="300" y1="150" x2="500" y2="150" stroke="#2563eb" strokeWidth="0.5" />
-          <line x1="300" y1="550" x2="500" y2="550" stroke="#2563eb" strokeWidth="0.5" />
-
-          {/* Node dots */}
-          <circle cx="400" cy="350" r="10" fill="#2563eb" />
-          <circle cx="180" cy="120" r="7" fill="#2563eb" />
-          <circle cx="620" cy="120" r="7" fill="#2563eb" />
-          <circle cx="680" cy="350" r="7" fill="#2563eb" />
-          <circle cx="620" cy="580" r="7" fill="#2563eb" />
-          <circle cx="180" cy="580" r="7" fill="#2563eb" />
-          <circle cx="120" cy="350" r="7" fill="#2563eb" />
-          <circle cx="300" cy="150" r="5" fill="#2563eb" />
-          <circle cx="500" cy="150" r="5" fill="#2563eb" />
-          <circle cx="300" cy="550" r="5" fill="#2563eb" />
-          <circle cx="500" cy="550" r="5" fill="#2563eb" />
-          <circle cx="400" cy="50" r="4" fill="#2563eb" />
-          <circle cx="400" cy="650" r="4" fill="#2563eb" />
-
-          {/* Diagonal connections */}
-          <line x1="300" y1="150" x2="180" y2="120" stroke="#2563eb" strokeWidth="0.4" />
-          <line x1="500" y1="150" x2="620" y2="120" stroke="#2563eb" strokeWidth="0.4" />
-          <line x1="300" y1="550" x2="180" y2="580" stroke="#2563eb" strokeWidth="0.4" />
-          <line x1="500" y1="550" x2="620" y2="580" stroke="#2563eb" strokeWidth="0.4" />
-
-          {/* Small accent dots */}
-          <circle cx="290" cy="250" r="3" fill="#2563eb" />
-          <circle cx="510" cy="250" r="3" fill="#2563eb" />
-          <circle cx="290" cy="450" r="3" fill="#2563eb" />
-          <circle cx="510" cy="450" r="3" fill="#2563eb" />
-        </svg>
-      </div>
+      {/* Gradient orbs - hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-[-80px] right-[10%] w-[500px] h-[500px] bg-primary-400/10 rounded-full blur-[100px] animate-pulse-glow" />
+      <div className="hidden md:block absolute bottom-[10%] left-[-60px] w-[400px] h-[400px] bg-primary-600/[0.06] rounded-full blur-[100px]" />
 
       <Container className="relative">
-        {/* Main content area */}
-        <div className="max-w-4xl lg:max-w-[58%] text-left">
+        {/* Main content */}
+        <div className="max-w-2xl lg:max-w-[58%]">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 bg-white/80 backdrop-blur-sm border border-primary-200/60 rounded-full px-5 py-2.5 mb-8 shadow-[0_2px_12px_rgba(37,99,235,0.08)]">
-            <span className="flex h-2.5 w-2.5 relative">
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary-200/60 rounded-full px-3.5 py-2 sm:px-4 sm:py-2.5 mb-6 lg:mb-8 shadow-sm">
+            <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-500" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500" />
             </span>
-            <span className="text-[13px] font-semibold text-primary-700 tracking-wide">
-              #1 Rated IT Staffing Partner — 250+ Enterprise Clients
+            <span className="text-xs sm:text-sm font-semibold text-primary-700">
+              #1 Rated IT Staffing Partner
             </span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-[42px] sm:text-[54px] lg:text-[68px] font-extrabold text-navy-900 leading-[1.05] tracking-[-0.04em] mb-7">
-            Build Elite Engineering
-            <br className="hidden sm:block" />
-            Teams{" "}
-            <span className="gradient-text">Without the</span>
-            <br className="hidden sm:block" />
-            <span className="gradient-text">Hiring Bottleneck</span>
+          {/* Headline - properly scaled for mobile */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] tracking-tight mb-5 lg:mb-7">
+            Build Elite Engineering Teams{" "}
+            <span className="gradient-text">Without the Hiring Bottleneck</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-[18px] sm:text-[20px] text-slate-500 leading-[1.7] max-w-xl mb-10">
+          <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-xl mb-8 lg:mb-10">
             We connect world-class engineers with innovative companies through a
             hiring process built for{" "}
             <strong className="text-navy-900 font-semibold">speed</strong>,{" "}
@@ -114,26 +59,26 @@ export default function Hero() {
             <strong className="text-navy-900 font-semibold">scale</strong>.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-start gap-4 mb-14">
-            <Button href="/contact" size="lg">
+          {/* CTAs - full width on mobile */}
+          <div className="flex flex-col sm:flex-row gap-3 mb-8 lg:mb-12">
+            <Button href="/contact" size="lg" className="w-full sm:w-auto">
               Hire Top Talent Now
               <ArrowRight className="w-4 h-4" />
             </Button>
-            <Button href="/services" variant="outline" size="lg">
+            <Button href="/services" variant="outline" size="lg" className="w-full sm:w-auto">
               See How We Work
             </Button>
           </div>
 
-          {/* Trust points - inline with icons */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[13.5px] text-slate-500">
+          {/* Trust points */}
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-x-5 sm:gap-y-2 text-sm text-slate-500">
             {[
               "48-hour candidate delivery",
               "98% client retention rate",
-              "Pre-vetted senior talent only",
+              "Pre-vetted senior talent",
             ].map((point) => (
               <div key={point} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-accent-500 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-accent-500 shrink-0" />
                 <span>{point}</span>
               </div>
             ))}
@@ -141,28 +86,30 @@ export default function Hero() {
         </div>
 
         {/* Metrics bar */}
-        <div className="mt-20 -mx-4 sm:mx-0">
-          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)] p-2">
+        <div className="mt-12 lg:mt-16">
+          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-xl lg:rounded-2xl shadow-sm p-1.5 sm:p-2">
             <div className="grid grid-cols-2 lg:grid-cols-4">
               {metrics.map((metric, i) => {
                 const Icon = metric.icon;
                 return (
                   <div
                     key={metric.label}
-                    className={`flex items-center gap-4 px-6 py-5 ${
-                      i < metrics.length - 1
-                        ? "border-b lg:border-b-0 lg:border-r border-slate-200/60"
-                        : ""
-                    } ${i === 1 ? "border-r-0 sm:border-r border-slate-200/60" : ""}`}
+                    className={`flex items-center gap-3 px-3 py-3.5 sm:px-5 sm:py-4 ${
+                      i < 2 ? "border-b lg:border-b-0" : ""
+                    } ${
+                      i % 2 === 0 ? "border-r" : ""
+                    } ${
+                      i < 3 ? "lg:border-r" : "lg:border-r-0"
+                    } border-slate-200/60`}
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-primary-600" />
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600" />
                     </div>
-                    <div>
-                      <p className="text-[22px] font-bold text-navy-900 tracking-[-0.02em] leading-none">
+                    <div className="min-w-0">
+                      <p className="text-lg sm:text-xl font-bold text-navy-900 leading-none">
                         {metric.value}
                       </p>
-                      <p className="text-[12px] text-slate-400 mt-1 font-medium">
+                      <p className="text-[11px] sm:text-xs text-slate-400 mt-0.5 font-medium truncate">
                         {metric.label}
                       </p>
                     </div>
@@ -174,15 +121,15 @@ export default function Hero() {
         </div>
 
         {/* Client logos */}
-        <div className="py-14 lg:py-16">
-          <p className="text-[11.5px] font-semibold text-slate-400 uppercase tracking-[0.2em] mb-7 text-center">
+        <div className="py-10 lg:py-14">
+          <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-[0.15em] mb-5 text-center">
             Trusted by industry leaders
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-3">
             {trustLogos.map((logo) => (
               <span
                 key={logo}
-                className="text-[16px] font-bold text-slate-300 tracking-[-0.01em] select-none hover:text-slate-400 transition-colors duration-300"
+                className="text-sm sm:text-base font-bold text-slate-300 select-none"
               >
                 {logo}
               </span>
