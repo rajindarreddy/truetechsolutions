@@ -49,8 +49,8 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
               { icon: Calendar, label: 'Founded', value: '2012' },
-              { icon: MapPin, label: 'Headquarters', value: 'Austin, TX' },
-              { icon: Building2, label: 'Offices', value: '4 Locations' },
+              { icon: MapPin, label: 'Headquarters', value: 'Granite Bay, CA' },
+              { icon: Building2, label: 'Offices', value: '1 Location' },
               { icon: Users, label: 'Team Size', value: '120+ Members' }
             ].map((item, index) => (
               <motion.div

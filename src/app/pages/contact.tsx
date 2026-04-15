@@ -26,10 +26,7 @@ export default function Contact() {
   };
 
   const offices = [
-    { city: 'Austin', address: '123 Congress Ave, Suite 500, Austin, TX 78701' },
-    { city: 'San Francisco', address: '456 Market St, Floor 12, San Francisco, CA 94102' },
-    { city: 'New York', address: '789 Broadway, Suite 800, New York, NY 10003' },
-    { city: 'Chicago', address: '321 Wacker Dr, Floor 15, Chicago, IL 60606' }
+    { city: 'Granite Bay', address: '8815 Bella Terra Court, Granite Bay, CA 95746' }
   ];
 
   return (
@@ -79,8 +76,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-semibold text-[#0B1F3A] mb-1">Email</div>
-                      <a href="mailto:contact@truetech.com" className="text-[#64748b] hover:text-[#2563eb] transition-colors duration-200">
-                        contact@truetech.com
+                      <a href="mailto:dipa@true-techsolutions.com" className="text-[#64748b] hover:text-[#2563eb] transition-colors duration-200">
+                        dipa@true-techsolutions.com
                       </a>
                     </div>
                   </div>
@@ -104,9 +101,8 @@ export default function Contact() {
                     <div>
                       <div className="font-semibold text-[#0B1F3A] mb-1">Headquarters</div>
                       <p className="text-[#64748b]">
-                        123 Congress Ave<br />
-                        Suite 500<br />
-                        Austin, TX 78701
+                        8815 Bella Terra Court<br />
+                        Granite Bay, CA 95746
                       </p>
                     </div>
                   </div>

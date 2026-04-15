@@ -247,9 +247,9 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-5 text-base">Get In Touch</h4>
             <div className="space-y-3">
               {[
-                { Icon: Mail, label: 'hello@truetech.com', type: 'mailto:hello@truetech.com', gradient: 'from-blue-500 to-blue-600' },
+                { Icon: Mail, label: 'dipa@true-techsolutions.com', type: 'mailto:dipa@true-techsolutions.com', gradient: 'from-blue-500 to-blue-600' },
                 { Icon: Phone, label: '+1 (512) 555-0100', type: 'tel:+15125550100', gradient: 'from-emerald-500 to-emerald-600' },
-                { Icon: MapPin, label: 'Austin, TX', type: '#', gradient: 'from-violet-500 to-violet-600' },
+                { Icon: MapPin, label: 'Granite Bay, CA', type: '#', gradient: 'from-violet-500 to-violet-600' },
               ].map((contact, index) => (
                 <motion.a
                   key={index}
